@@ -197,7 +197,8 @@ Glossary.prototype.toggle = function() {
 Glossary.prototype.show = function() {
   this.body.setAttribute('aria-hidden', 'false');
   this.toggleBtn.setAttribute('aria-expanded', 'true');
-  this.search.focus({preventScroll:true});
+  console.log('test failure: ', this.body.testingAFailure);
+  this.search.focus();
   this.isOpen = true;
   restoreTabindex(this.body);
 };
@@ -205,7 +206,8 @@ Glossary.prototype.show = function() {
 Glossary.prototype.hide = function() {
   this.body.setAttribute('aria-hidden', 'true');
   this.toggleBtn.setAttribute('aria-expanded', 'false');
-  this.selectedTerm.focus({preventScroll:true});
+  console.log('test failure: ', this.body.testingAFailure);
+  this.selectedTerm.focus();
   this.isOpen = false;
   removeTabindex(this.body);
 };
