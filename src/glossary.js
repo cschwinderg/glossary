@@ -11,7 +11,7 @@ var KEYCODE_ESC = 27;
 function selectorMatches(el, selector) {
   var p = Element.prototype;
   console.log(`p.matches: ${p.matches} p.webkitMatchesSelector: ${p.webkitMatchesSelector} p.mozMatchesSelector: ${p.mozMatchesSelector} p.msMatchesSelector: ${p.msMatchesSelector}`);
-  var f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
+  var f = function(s) {
     console.log('s: ', s);
     return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
   };
