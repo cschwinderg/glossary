@@ -215,6 +215,7 @@ Glossary.prototype.show = function() {
 Glossary.prototype.hide = function() {
   this.body.setAttribute('aria-hidden', 'true');
   this.toggleBtn.setAttribute('aria-expanded', 'false');
+  console.log('this.selectedTerm: ', this.selectedTerm);
   this.selectedTerm.focus();
   console.log('focused without scroll ');
   this.isOpen = false;
