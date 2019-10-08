@@ -206,7 +206,7 @@ Glossary.prototype.toggle = function() {
 Glossary.prototype.show = function() {
   this.body.setAttribute('aria-hidden', 'false');
   this.toggleBtn.setAttribute('aria-expanded', 'true');
-  this.search.focus({preventScroll: true});
+  this.search.focus();
   console.log('focused without scroll ');
   this.isOpen = true;
   restoreTabindex(this.body);
@@ -215,7 +215,7 @@ Glossary.prototype.show = function() {
 Glossary.prototype.hide = function() {
   this.body.setAttribute('aria-hidden', 'true');
   this.toggleBtn.setAttribute('aria-expanded', 'false');
-  this.selectedTerm.focus({preventScroll: true});
+  this.selectedTerm.focus();
   console.log('focused without scroll ');
   this.isOpen = false;
   removeTabindex(this.body);
