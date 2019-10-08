@@ -164,6 +164,7 @@ Glossary.prototype.linkTerms = function() {
 
 Glossary.prototype.handleTermTouch = function(e) {
   if (e.which === KEYCODE_ENTER || e.type === 'click') {
+    console.log('e.target: ', e.target);
     console.log("selectorMatches(e.target, '[data-term]'): ", selectorMatches(e.target, '[data-term]'));
     if (selectorMatches(e.target, '[data-term]')) {
       this.show(e);
