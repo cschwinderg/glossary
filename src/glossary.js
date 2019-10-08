@@ -10,9 +10,13 @@ var KEYCODE_ESC = 27;
 // https://davidwalsh.name/element-matches-selector
 function selectorMatches(el, selector) {
   var p = Element.prototype;
+  console.log(`p.matches: ${p.matches} p.webkitMatchesSelector: ${p.webkitMatchesSelector} p.mozMatchesSelector: ${p.mozMatchesSelector} p.msMatchesSelector: ${p.msMatchesSelector}`);
   var f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
+    console.log('s: ', s);
     return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
   };
+  console.log('el: ', el);
+  console.log('selector: ', selector);
   return f.call(el, selector);
 }
 
