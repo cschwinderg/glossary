@@ -26,8 +26,10 @@ function selectorMatches(el, selector) {
 function closest(el, selector) {
   while (el) {
     if (selectorMatches(el, selector)) {
+      console.log('closest found a match');
       break;
     }
+    console.log('closest not a match');
     el = el.parentElement;
   }
   return el;
