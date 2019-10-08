@@ -17,6 +17,7 @@ function selectorMatches(el, selector) {
   };
   console.log('el: ', el);
   console.log('selector: ', selector);
+  console.log('f.call(el, selector): ', f.call(el, selector));
   return f.call(el, selector);
 }
 
